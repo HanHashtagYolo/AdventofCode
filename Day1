@@ -1,0 +1,12 @@
+import os
+handle = open("Day1Input.txt", "r")
+numberList = []
+for line in handle:
+	numberList.append(int(line))
+for number in numberList:
+	checkNum = 2020-number
+	for number2 in numberList:
+		lastNum = checkNum - number2
+		if lastNum in numberList:
+			print number*number2*lastNum
+			break

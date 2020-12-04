@@ -1,0 +1,21 @@
+import os
+file = open("Day2Input.txt")
+
+passwords = []
+for line in file:
+	passwords.append(line)
+valid = 0
+for entry in passwords:
+	policy, password = entry.split(':')
+	bounds, letter = policy.split(' ')
+	bot, top = bounds.split('-')
+	i = 0
+	for c in password:
+		if c == letter:
+			i += 1
+	print i, bot, top
+
+	if i >= int(bot) and i <= int(top):
+		valid += 1 
+
+print valid
